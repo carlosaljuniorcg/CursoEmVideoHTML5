@@ -235,3 +235,16 @@ footer#rodape {
 footer#rodape p {
     text-align: center;
 }
+
+video#filme {
+    margin: 0 0 10px 7px;
+}
+
+video#filme01{
+    margin: 0 0 10px 7px;
+}
+
+video#filme02{
+    width: 450px;
+    margin-top: -15px;
+}
