@@ -1,4 +1,4 @@
 function mudaFoto(foto) 
     {
-        document.getElementById("icone").scr = "_imagens/" + foto + ".png";
+        document.getElementById("icone").scr = foto;
     }
