@@ -8,6 +8,15 @@
     <title>Tudo sobre Google Glass</title>
     <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
     <link rel="stylesheet" href="_css/form.css">
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+
+    </script>
 </head>
 <script src="_javascript/funcoes.js"></script>
 <body>
@@ -47,8 +56,8 @@
         </article>
     </section>
 
-<form method="post" id="fContato" action="mailto: carlosaljuniorcg@gmail.com">
-    <fieldset id="ususario"><legend>Identificação do Usuário</legend>
+<form method="post" id="fContato" action="mailto: carlosaljuniorcg@gmail.com" oninput="calc_total();">
+    <fieldset id="usuario"><legend>Identificação do Usuário</legend>
     <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="30" maxlength="30" placeholder="Nome Completo"></p>
     <p><label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Dígitos"></p>
     <p><label for="cMail">E-mail:</label><input type="email" name="tMail" id="cMail" size="20" maxlength="40" ></p>
@@ -91,17 +100,20 @@
         <p><label for="cUrg">Grau de Urgência:</label>
         Min<input type="range" name="tUrg" id="cUrg" min="0" max="10">Max</p>
         <p><Label for="cMsg">Mensagem:</Label>
-        <textarea name="tMsg" id="cMsg" cols="30" rows="10" placeholder="Deixe aqui sua mensagem..."></textarea></p>
+        <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem..."></textarea></p>
     </fieldset>
 
     <fieldset id="pedido"><legend>Quero um Google Glass</legend>
-        <p><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
-        <p><label for="cCor">Cor:</label></p>
-        <p><label for="cQtd">Quantidade:</label></p>
-        <p><label for="cTot">Preço Totoal: R$</label></p>
+        <p><input type="checkbox" name="tPed" id="cPed" checked/><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+        <p><label for="cCor">Cor:</label>
+        <input type="color" name="tCor" id="cCor" value="#ffffff" > </p>
+        <p><label for="cQtd">Quantidade:</label>
+        <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"></p>
+        <p><label for="cTot">Preço Totoal: R$</label>
+        <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly></p>
     </fieldset>
 
-    [BOTÃO ENVIAR]
+    <input type="image" name="tEnviar" id="cEnviar" src="../projeto-glass-html5/_imagens/botao-enviar.png">
 </form>
 
 <footer id="rodape">
